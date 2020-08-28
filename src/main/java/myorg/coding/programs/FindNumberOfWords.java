@@ -1,5 +1,7 @@
 package myorg.coding.programs;
 
+import java.util.Scanner;
+
 public class FindNumberOfWords {
 
 	public int count(String sentence) {
@@ -40,7 +42,8 @@ public class FindNumberOfWords {
 				}
 
 			}//end of for loop
-			System.out.println("word count : "+wordCount);
+			System.out.println(sentence+"\n word count : "+wordCount);
+			System.out.println("***************");
 			return wordCount;
 		}
 	}
@@ -48,17 +51,32 @@ public class FindNumberOfWords {
 	public static void main(String args[]) {
 		
 		FindNumberOfWords fn = new FindNumberOfWords();
+		Scanner sn = new Scanner(System.in);
+		String str = sn.nextLine();
+		sn.close();
 		String sentence =" India is my country. I am proud of it! What a beautiful place$ "; 
+		fn.count(str.trim());
 		fn.count(sentence.trim());
 		fn.count(" !&&&&$$$. ");
 		fn.count(" . ");
 		
 		/*
-		 Expected Output :
-		 	word count : 13
-			word count : 0
-			word count : 0
- 
+		  	Expected Output :
+			I want to dance
+
+			I want to dance
+ 			word count : 4
+		 	***************
+			India is my country. I am proud of it! What a beautiful place$
+ 			word count : 13
+		 	***************
+ 			!&&&&$$$. 
+ 			word count : 0
+		 	***************
+ 			. 
+ 			word count : 0
+		 	***************
+
 		 * */
 		
 	}
