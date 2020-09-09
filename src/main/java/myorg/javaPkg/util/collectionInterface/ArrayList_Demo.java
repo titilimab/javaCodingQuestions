@@ -80,6 +80,21 @@ public class ArrayList_Demo {
 
 		//Display the arrayList
 		System.out.println("Display the contents of the ArrayList afyter elements are removed : "+arrList);
+		
+		/* Console Output :
+		Initial size of ArrayList when no elements are added : 0
+		Table
+		Chair
+		Bed
+		Utensils
+		Bucket
+		Food
+		Size of ArrayList after elements are added : 6
+		Display the contents of the ArrayList after elements are added : [Table, Chair, Bed, Utensils, Bucket, Food]
+		Size of ArrayList after elements are removed : 5
+		Display the contents of the ArrayList afyter elements are removed : [Table, Chair, Utensils, Bucket, Food]
+
+		 * */
 
 	}
 
