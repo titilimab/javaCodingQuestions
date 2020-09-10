@@ -13,7 +13,7 @@ public class Palindrome_Number {
 		int temp;
 		
 		temp = num;
-		while(num > 0) {
+		while(num != 0) {
 			remainder = num%10;
 			sum = (sum*10)+remainder;
 			num = num/10;
@@ -38,5 +38,16 @@ public class Palindrome_Number {
 	Before reverse : 3468429
 	After reverse : 9248643
 	The number : 3468429 is not a Palindrome
+	
+	-121
+	Before reverse : -121
+	After reverse : -121
+	The number : -121 is a Palindrome
+	
+	-1345826
+	Before reverse : -1345826
+	After reverse : -6285431
+	The number : -1345826 is not a Palindrome
+	
 	 * */
 }
