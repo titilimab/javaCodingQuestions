@@ -12,6 +12,10 @@ public class HashMap_Demo_MapNameToAccountBalances {
 		Create a HashMap : 
 		Key : String : To hold Account Holder Name
 		Value : Double : To hold Balance
+		
+		Note :
+		A hash map does not guarantee the order of its elements. 
+		Therefore, the order in which elements are added to a hash map is not necessarily the order in which they are read by an iterator.
 		*/
 		HashMap<String, Double> hm = new HashMap<String, Double>();
 		
