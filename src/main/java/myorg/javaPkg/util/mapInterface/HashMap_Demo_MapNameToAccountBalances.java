@@ -16,7 +16,59 @@ public class HashMap_Demo_MapNameToAccountBalances {
 		Note :
 		A hash map does not guarantee the order of its elements. 
 		Therefore, the order in which elements are added to a hash map is not necessarily the order in which they are read by an iterator.
+		
+		**** Types of constructors for HashMap ****
+		
+		1.	public HashMap() :
+			Constructs an empty HashMap with the default initial capacity(16) and the default load factor (0.75).
+			
+		2.	public HashMap(int initialCapacity) :
+			Constructs an empty HashMap with the specified initialCapacity and the default load factor (0.75).
+			
+			Parameters:initialCapacity - the initial capacity.
+			
+			Throws:IllegalArgumentException - if the initial capacity is negative.
+			
+		3.	public HashMap(Map<? extends K,? extends V> m) :
+			Constructs a new HashMap with the same mappings as the specified Map. 
+			The HashMap is created with default load factor (0.75) and an initial capacity sufficient to hold the mappings in the specified Map.
+			
+			Parameters:m - the map whose mappings are to be placed in this map
+			
+			Throws:NullPointerException - if the specified map is null
+			
+		4.	public HashMap(int initialCapacity, float loadFactor) :
+			Constructs an empty HashMap with the specified initial capacity and load factor.
+			
+			Parameters:initialCapacity - the initial capacity, loadFactor - the load factor
+			
+			Throws:IllegalArgumentException - if the initial capacity is negative or the load factor is non positive
+			
+		 ******Performance of HashMap depends on 2 parameters:****
+			
+			Initial Capacity
+			Load Factor
+
+		1.	Initial Capacity � It is the capacity of HashMap at the time of its creation (It is the number of buckets a HashMap can hold when the HashMap is instantiated). 
+			In java, it is 2^4=16 initially, meaning it can hold 16 key-value pairs.
+			
+		2.	Load Factor � It is the percent value of the capacity after which the capacity of Hashmap is to be increased (It is the percentage fill of buckets after which Rehashing takes place). 
+			In java, it is 0.75f by default, meaning the rehashing takes place after filling 75% of the capacity.
+
+		3.	Threshold � It is the product of Load Factor and Initial Capacity. In java, by default, it is (16 * 0.75 = 12). 
+			That is, Rehashing takes place after inserting 12 key-value pairs into the HashMap.
+			
+		4.	Rehashing � It is the process of doubling the capacity of the HashMap after it reaches its Threshold. 
+			In java, HashMap continues to rehash(by default) in the following sequence � 2^4, 2^5, 2^6, 2^7, �. so on.
+			
+		Note.	If the initial capacity is kept higher then rehashing will never be done. 
+			But by keeping it higher it increases the time complexity of iteration. 
+			So it should be chosen very cleverly to increase performance.
+			The expected number of values should be taken into account to set initial capacity. 
+			Most generally preferred load factor value is 0.75 which provides a good deal between time and space costs. 
+			Load factor�s value varies between 0 and 1.
 		*/
+		
 		HashMap<String, Double> hm = new HashMap<String, Double>();
 		
 		//Put elements into the HashMap as Key-Value pair
