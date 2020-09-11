@@ -61,8 +61,7 @@ public class HashMap_Demo_MapNameToAccountBalances {
 		
 		//Diaplay the set
 		for(Map.Entry<String, Double> me : set) {
-			System.out.print(me.getKey()+":");
-			System.out.println(me.getValue());
+			System.out.println(me.getKey()+":"+me.getValue());
 		}
 		
 		System.out.println();
