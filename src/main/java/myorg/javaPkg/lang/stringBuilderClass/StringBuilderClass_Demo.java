@@ -98,7 +98,6 @@ Constructs a string builder initialized to the contents of the specified string.
 		// create a StringBuilder object using StringBuilder(String) constructor 
 		StringBuilder str3 = new StringBuilder("SimpleString"); 
 		System.out.println("Constructor-StringBuilder(String) : String3 : "+ str3);
-
 		/*
 Console Output :
 
@@ -107,6 +106,155 @@ Constructor-StringBuilder(CharSequence) : String1 : ABRACADABRA
 Constructor-StringBuilder(capacity) : String2 : capacity = 10
 Constructor-StringBuilder(String) : String3 : SimpleString
 
+		 * */
+
+		/*
+		StringBuilder append() method :
+The java.lang.StringBuilder.append() method is used to append the string representation of the passing argument to the existing sequence. 
+There are 14 ways/forms in which the append() method can be used by the passing of various types of arguments
+
+Syntax:
+public StringBuilder append(String s)
+		 * */
+
+		StringBuilder sbAppend=new StringBuilder("Hello ");  
+		sbAppend.append("Java");//now original string is changed  
+		System.out.println("StringBuilder : append : "+sbAppend);
+
+		/*
+		 Console Output :
+		 StringBuilder : append : Hello Java
+		 * */
+
+		/*
+		 StringBuilder insert() method :
+The java.lang.StringBuilder.insert(int offset, char c) method inserts the given string or character sequence with the existing string at the given position.
+There are 12 ways/forms in which the insert() method can be used by the passing of various types of arguments.
+
+Syntax:
+public StringBuilder insert(int offset, char c)
+		 * */
+
+		StringBuilder sbInsert=new StringBuilder("Hello ");  
+		sbInsert.insert(1,"Java");//now original string is changed  
+		System.out.println("StringBuilder : Insert : "+sbInsert);  
+
+		/*
+		 Console Output :
+		 StringBuilder : Insert : HJavaello 
+		 */
+
+		/*
+		public StringBuilder replace(int startIndex, int endIndex, String str) method :
+The java.lang.StringBuilder.replace(int startIndex, int endIndex, String str) method replaces the characters in a substring of the existing sequence from startIndex to endIndex with characters in the specified passing String.
+There is only 1 implementation to the replace() method.
+
+Syntax :
+public StringBuilder replace(int start, int end, String str)
+		 */
+		StringBuilder sbReplace=new StringBuilder("Hello");  
+		sbReplace.replace(1,3,"Java");  
+		System.out.println("StringBuilder : Replace : "+sbReplace);//1 index = e, 3 index = l, replaces "ell" with Java. Expected output : HJavao. Observation - The endIndex character is included in the new string. Not sure why?
+		/*
+		 Console output :
+		 StringBuilder : Replace : HJavalo
+		 * */
+
+		/*
+		 public StringBuilder delete(int startIndex, int endIndex) method :
+The java.lang.StringBuilder.delete(int startIndex, int endIndex) method deletes the characters in a substring of the existing sequence from startIndex to endIndex with characters in the specified passing String.
+There is only 1 implementation to the delete() method.
+
+Syntax :
+public StringBuilder delete(int start, int end)		 
+		 * */
+		StringBuilder sbDelete=new StringBuilder("Hello");  
+		sbDelete.delete(1,3);  
+		System.out.println("StringBuilder : delete : "+sbDelete); //Observation - The endIndex character is included in the new string. Not sure why?
+		/*
+		 Console Output :
+		 StringBuilder : delete : Hlo
+		 * */
+
+		/*
+		 public StringBuilder reverse() method :
+The java.lang.StringBuilder.reverse() method causes the character sequence/string that calls the reverse() method to be replaced by reverse of the sequence.
+There is only 1 implementation to the reverse() method.
+
+Syntax :
+public StringBuilder reverse()	 
+		 * */
+
+		StringBuilder sbReverse=new StringBuilder("Hello");  
+		sbReverse.reverse();  
+		System.out.println("StringBuilder : reverse : "+sbReverse);//prints olleH  
+		/*
+		 Console Output :
+		 StringBuilder : reverse : olleH  
+		 * */
+		/*
+public int capacity() method :
+The java.lang.StringBuilder.capacity() method of StringBuilder class returns the current capacity of the Builder. 
+The default capacity of the Builder is 16. 
+If the number of character increases from its current capacity, it increases the capacity by (oldcapacity*2)+2. 
+For example if your current capacity is 16, it will be (16*2)+2=34.
+
+Syntax :
+public int capacity()
+		 * */
+		StringBuilder sbCapacity=new StringBuilder();  
+		System.out.println("Old capacity before initialization : "+sbCapacity.capacity());//default 16  
+		sbCapacity.append("Hello");  
+		System.out.println("String : "+sbCapacity+"\nCapacity after string append when length of string is less than 16 : "+sbCapacity.capacity());//now 16  
+		sbCapacity.append("Java is my favourite language");  
+		System.out.println("String : "+sbCapacity+"\nCapacity after string append when length of string is more than 16 :"+sbCapacity.capacity());//now (16*2)+2=34 i.e (oldcapacity*2)+2
+		sbCapacity.append("Python is in progress.I love it!");  
+		System.out.println("String : "+sbCapacity+"\nCapacity after string append when length of string is more than 34 :"+sbCapacity.capacity());//now (34*2)+2=70 i.e (oldcapacity*2)+2
+		/*
+Console Output :
+Old capacity before initialization : 16
+String : Hello
+Capacity after string append when length of string is less than 16 : 16
+String : HelloJava is my favourite language
+Capacity after string append when length of string is more than 16 :34
+String : HelloJava is my favourite languagePython is in progress.I love it!
+Capacity after string append when length of string is more than 34 :70
+
+		 * */
+
+		/*
+public int ensureCapacity(int capacity) method :
+The java.lang.StringBuilder.ensureCapacity() method of StringBuilder class ensures that the given capacity is the minimum to the current capacity.  
+The default capacity of the Builder is 16. 
+If the number of character increases from its current capacity, it increases the capacity by (oldcapacity*2)+2. 
+For example if your current capacity is 16, it will be (16*2)+2=34.
+
+Syntax :
+public int ensureCapacity(int capacity)
+		 * */
+
+		StringBuilder sbEnsureCapacity=new StringBuilder();  
+		System.out.println("Old capacity before initialization : "+sbEnsureCapacity.capacity());//default 16  
+		sbEnsureCapacity.append("Hello");  
+		System.out.println("String : "+sbEnsureCapacity+"\nCapacity after string append when length of string is less than 16 : "+sbEnsureCapacity.capacity());//now 16  
+		sbEnsureCapacity.append("java is my favourite language");  
+		System.out.println("String : "+sbEnsureCapacity+"\nCapacity after string append when length of string is less than 34 : "+sbEnsureCapacity.capacity());//now (16*2)+2=34 i.e (oldcapacity*2)+2  
+		sbEnsureCapacity.ensureCapacity(10);//now no change  
+		System.out.println("String : "+sbEnsureCapacity+"\nCapacity after capacity set to 10 : "+sbEnsureCapacity.capacity());//now 34  
+		sbEnsureCapacity.ensureCapacity(50);//now (34*2)+2  
+		System.out.println("String : "+sbEnsureCapacity+"\nCapacity after capacity set to 50 : "+sbEnsureCapacity.capacity());//now 70
+
+		/*
+		 Console Output :
+Old capacity before initialization : 16
+String : Hello
+Capacity after string append when length of string is less than 16 : 16
+String : Hellojava is my favourite language
+Capacity after string append when length of string is less than 16 : 34
+String : Hellojava is my favourite language
+Capacity after capacity set to 10 : 34
+String : Hellojava is my favourite language
+Capacity after capacity set to 50 : 70
 		 * */
 
 	}
