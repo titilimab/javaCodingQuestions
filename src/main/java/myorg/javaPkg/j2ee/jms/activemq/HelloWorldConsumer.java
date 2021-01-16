@@ -25,14 +25,14 @@ public class HelloWorldConsumer {
 			env.put(Context.SECURITY_PRINCIPAL, "admin");
 			env.put(Context.SECURITY_CREDENTIALS, "admin");
 			env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.activemq.jndi.ActiveMQInitialContextFactory");
-			env.put(Context.PROVIDER_URL, "tcp://Rajesh-PC:61616");
+			env.put(Context.PROVIDER_URL, "tcp://Name-PC:61616");
 
 			//Create the Initial Context object
 			InitialContext jndi = new InitialContext(env);
 
 			//Create connection Factory
 			QueueConnectionFactory connectionFactory =  (QueueConnectionFactory)jndi.lookup("QueueConnectionFactory");
-			//ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://Rajesh-PC:61616");
+			//ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://Name-PC:61616");
 
 			//Create a connection
 			Connection connection = connectionFactory.createConnection();
